@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'IMFell';
+    src: url('IMFellGreatPrimer-Regular.ttf') format('truetype');
+    font-style: normal;
+}
+
+body {
+    font-family: 'IMFell';
+    margin: 18px;
+}
+
+pre {
+    font-family: 'IMFell';
+}
