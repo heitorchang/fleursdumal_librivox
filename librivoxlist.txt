@@ -126,6 +126,7 @@
 125 Brumes et pluies
 126 Rêve parisien
 127 Le crépuscule du matin
+128 L'âme du vin
 129 Le vin des chiffonniers
 130 Le vin de l'assassin
 131 Le vin du solitaire

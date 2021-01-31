@@ -1,5 +1,4 @@
-titles = [
-"0 Préface",
+titles = ["0 Préface",
 "1 Bénédiction",
 "2 L'albatros",
 "3 Élévation",
@@ -127,6 +126,7 @@ titles = [
 "125 Brumes et pluies",
 "126 Rêve parisien",
 "127 Le crépuscule du matin",
+"128 L'âme du vin",
 "129 Le vin des chiffonniers",
 "130 Le vin de l'assassin",
 "131 Le vin du solitaire",
@@ -149,4 +149,5 @@ titles = [
 "148 La mort des artistes",
 "149 La fin de la journée",
 "150 Le rêve d'un curieux",
-"151 Le voyage"]
+"151 Le voyage",
+"152 --"]

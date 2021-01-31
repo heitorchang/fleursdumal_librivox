@@ -31,7 +31,7 @@ Poem numbers follow <a href="https://librivox.org/les-fleurs-du-mal-by-charles-b
                     disp = str(num) + " " + " ".join(tokens[1:]) + "\n"
                     print(f"""<a href="{i}.html">{disp}</a>""", file=idx)
                 else:
-                    print(str(i), end=" ")
+                    print(line, end="")
 
         print("""
  Credits:
