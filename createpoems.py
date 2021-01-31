@@ -1,4 +1,23 @@
+import os
 from titlelist import titles
+
+
+def previdx(idx):
+    idx -= 1
+    while idx > 0:
+        if os.path.exists(f"{idx}.txt"):
+            return idx
+        idx -= 1
+    return 0
+    
+def nextidx(idx):
+    idx += 1
+    while idx < 152:
+        if os.path.exists(f"{idx}.txt"):
+            return idx
+        idx += 1
+    return 0
+    
 
 def createpoem(idx):
     try:
@@ -6,10 +25,12 @@ def createpoem(idx):
         poem = fin.read().strip()
         fin.close()
     except FileNotFoundError:
-        print(f"File {idx} not found.")
         return ""
     
-    with open(f"dist/{idx}.html", 'w', encoding="utf-8") as idxf:    
+    with open(f"dist/{idx}.html", 'w', encoding="utf-8") as idxf:
+        previdxn = previdx(idx)
+        nextidxn = nextidx(idx)
+
         print(f"""<!DOCTYPE html>
     <html lang="en">
         <head>
@@ -22,9 +43,9 @@ def createpoem(idx):
         <a href="index.html">Homepage</a><br><br>
 """, file=idxf)
         if idx > 0:
-            print(f"""<a href="{idx-1}.html">&lt;&lt; {titles[idx-1]}</a> *** """, file=idxf)
+            print(f"""<a href="{previdxn}.html">&lt;&lt; {titles[previdxn]}</a> &nbsp;&nbsp;&nbsp; """, file=idxf)
         if idx < 152:
-            print(f"""<a href="{idx+1}.html">{titles[idx+1]} &gt;&gt;</a><br><br>""", file=idxf)
+            print(f"""<a href="{nextidxn}.html">{titles[nextidxn]} &gt;&gt;</a><br><br>""", file=idxf)
         print(f"""
                 <figure>
             <audio controls src="fleursdumal_{str(idx).zfill(3)}_baudelaire_64kb.mp3">
@@ -40,9 +61,9 @@ def createpoem(idx):
         print("""<br><br><a href="index.html">Homepage</a><br><br>
 """, file=idxf)
         if idx > 0:
-            print(f"""<a href="{idx-1}.html">&lt;&lt; {titles[idx-1]}</a> *** """, file=idxf)
+            print(f"""<a href="{previdxn}.html">&lt;&lt; {titles[previdxn]}</a> &nbsp;&nbsp;&nbsp; """, file=idxf)
         if idx < 152:
-            print(f"""<a href="{idx+1}.html">{titles[idx+1]} &gt;&gt;</a><br><br>""", file=idxf)
+            print(f"""<a href="{nextidxn}.html">{titles[nextidxn]} &gt;&gt;</a><br><br>""", file=idxf)
         
         print("<br><br></body></html>", file=idxf)
 
