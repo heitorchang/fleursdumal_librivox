@@ -6,11 +6,13 @@
 
 body {
     font-family: 'IMFell';
-    margin: 18px;
+    margin: 1.5em;
 }
 
 pre {
     font-family: 'IMFell';
+    white-space: pre-wrap;
+    word-break: keep-all;
 }
 
 a {
