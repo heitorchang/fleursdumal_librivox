@@ -19,9 +19,14 @@ def createindex():
     CHARLES BAUDELAIRE
     """, file=idx)
 
+        print("Missing poems: ")
         with open("librivoxlist.txt", encoding="utf-8") as lst:
             for i, line in enumerate(lst):
                 if os.path.exists(str(i) + ".txt"):
                     print(f"""<a href="{i}.html">{line}</a>""", file=idx)
+                else:
+                    print(str(i), end=" ")
 
         print("</pre></body></html>", file=idx)
+    print()
+    print("End of createindex.")
