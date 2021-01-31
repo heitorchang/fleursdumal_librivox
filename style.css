@@ -12,3 +12,7 @@ body {
 pre {
     font-family: 'IMFell';
 }
+
+a {
+    text-decoration: none;
+}
