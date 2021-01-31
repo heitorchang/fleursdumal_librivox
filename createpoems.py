@@ -36,5 +36,13 @@ def createpoem(idx):
         print(poem, file=idxf)
         print(f"""</pre>
         """, file=idxf)
-        print("</body></html>", file=idxf)
+
+        print("""<br><br><a href="index.html">Homepage</a><br><br>
+""", file=idxf)
+        if idx > 0:
+            print(f"""<a href="{idx-1}.html">&lt;&lt; {titles[idx-1]}</a> *** """, file=idxf)
+        if idx < 152:
+            print(f"""<a href="{idx+1}.html">{titles[idx+1]} &gt;&gt;</a><br><br>""", file=idxf)
+        
+        print("<br><br></body></html>", file=idxf)
 
